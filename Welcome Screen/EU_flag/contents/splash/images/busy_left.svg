@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Gravit.io -->
+
+<svg
+   style="isolation:isolate"
+   viewBox="0 0 44 44"
+   width="44pt"
+   height="44pt"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="busy_left.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview3"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="pt"
+     inkscape:zoom="8"
+     inkscape:cx="12.5"
+     inkscape:cy="33.4375"
+     inkscape:window-width="1920"
+     inkscape:window-height="1012"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3"
+     showguides="false" />
+  <path
+     d="M 42.5,22 C 42.5,10.686 33.314,1.5 22,1.5 10.686,1.5 1.5,10.686 1.5,22 1.5,33.314 10.686,42.5 22,42.5 33.314,42.5 42.5,33.314 42.5,22 Z m -1,0 C 41.5,16.83 39.44,11.87 35.79,8.21 32.13,4.56 27.17,2.5 22,2.5 16.83,2.5 11.87,4.56 8.2100001,8.21 4.56,11.87 2.5,16.83 2.5,22 2.5,27.17 4.56,32.13 8.2100001,35.79 11.87,39.44 16.83,41.5 22,41.5 27.17,41.5 32.13,39.44 35.79,35.79 39.44,32.13 41.5,27.17 41.5,22 Z"
+     fill-rule="evenodd"
+     fill="#292048"
+     id="path1" />
+  <defs
+     id="defs1">
+    <filter
+       id="pZsLpuEib01tEP5RZu3cE9HARYpJvcq8"
+       x="-2.1387252"
+       y="-2.453491"
+       width="5.2774504"
+       height="5.906982"
+       filterUnits="objectBoundingBox"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="21.46804531419514"
+         id="feGaussianBlur1" />
+      <feOffset
+         dx="0"
+         dy="0"
+         result="pf_100_offsetBlur"
+         id="feOffset1" />
+      <feFlood
+         flood-color="#FF0000"
+         flood-opacity="0.65"
+         id="feFlood1" />
+      <feComposite
+         in2="pf_100_offsetBlur"
+         operator="in"
+         result="pf_100_dropShadow"
+         id="feComposite1" />
+      <feBlend
+         in="SourceGraphic"
+         in2="pf_100_dropShadow"
+         mode="normal"
+         id="feBlend1" />
+    </filter>
+  </defs>
+  <g
+     filter="url(#pZsLpuEib01tEP5RZu3cE9HARYpJvcq8)"
+     id="g2"
+     transform="matrix(-1,0,0,1,43.998976,0)">
+    <linearGradient
+       id="_lgradient_7"
+       x1="0.0027067361"
+       y1="0.096874997"
+       x2="1.2744139"
+       y2="1.0629767"
+       gradientTransform="matrix(24.16,0,0,21,1.5,21.5)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0%"
+         stop-opacity="1"
+         style="stop-color:rgb(255,0,145)"
+         id="stop1" />
+      <stop
+         offset="98.33333333333333%"
+         stop-opacity="0"
+         style="stop-color:rgb(0,0,0)"
+         id="stop2" />
+    </linearGradient>
+    <path
+       d="m 25.01,41.27 v 0 c 0.276,-0.044 0.534,0.142 0.575,0.415 v 0 c 0.041,0.273 -0.145,0.531 -0.415,0.575 v 0 C 24.12,42.42 23.06,42.5 22,42.5 16.57,42.5 11.35,40.34 7.51,36.49 3.66,32.65 1.5,27.43 1.5,22 v -0.5 h 1 V 22 c 0,5.17 2.06,10.13 5.71,13.79 3.66,3.65 8.62,5.71 13.79,5.71 1.01,0 2.02,-0.08 3.01,-0.23 z"
+       fill="url(#_lgradient_7)"
+       id="path2"
+       style="fill:url(#_lgradient_7)" />
+  </g>
+  <path
+     d="m 41.500609,21.64 0.01,0.5 1,-0.02 -0.01,-0.5 c -0.01,-0.64 -0.06,-1.28 -0.13,-1.92 v 0 c -0.028,-0.276 -0.274,-0.475 -0.55,-0.445 v 0 c -0.276,0.03 -0.473,0.279 -0.44,0.555 v 0 c 0.07,0.61 0.11,1.22 0.12,1.83 z"
+     fill="#ffffff"
+     id="path3" />
+</svg>
