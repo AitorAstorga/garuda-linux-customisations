@@ -3,6 +3,9 @@
 # Determine the directory where the script is being executed
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# Capture the current user's name who invoked sudo
+CURRENT_USER=${SUDO_USER:-$USER}
+
 # Define an associative array (similar to a dictionary in other languages) for paths
 declare -A PATHS
 
@@ -34,6 +37,16 @@ for ITEM in "${!PATHS[@]}"; do
     if [[ -d "$DIR/$ITEM" ]]; then
         echo "Copying $ITEM..."
         cp -r "$DIR/$ITEM" "${PATHS[$ITEM]}"
+
+        # After copying, check for the two paths and chown them back to the user
+        if [[ "$ITEM" == "Application Configuration" || "$ITEM" == "Global Shortcuts" ]]; then
+            # Check if it's a directory or file and then chown
+            if [[ -d "${PATHS[$ITEM]}" ]]; then
+                chown -R $CURRENT_USER: "${PATHS[$ITEM]}"
+            elif [[ -f "${PATHS[$ITEM]}" ]]; then
+                chown $CURRENT_USER: "${PATHS[$ITEM]}"
+            fi
+        fi
     else
         echo "Directory $ITEM not found in $DIR, skipping..."
     fi
