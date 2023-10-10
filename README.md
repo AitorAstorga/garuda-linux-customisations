@@ -123,6 +123,10 @@ This is the list of paths for each component:
 | Application Configuration        | ~/.config/                         |
 | Global Shortcuts                 | ~/.config/kglobalshortcutsrc       |
 
+Enable the menu app in the top bar of windows (options such as Files, Edit, View...):
+
+![imagen](https://github.com/AitorAstorga/garuda-linux-customisations/assets/44289776/9b053bbf-77a2-4b19-9734-09cfebaf6268)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
