@@ -1,4 +1,3 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
 
 <!-- PROJECT SHIELDS -->
@@ -20,8 +19,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/AitorAstorga/garuda-linux-customisations">
+    <img src="images/garuda-linux-customisations-pink.png" alt="Logo" width="320" height="320">
   </a>
 
   <h3 align="center">Garuda Linux Customisations</h3>
@@ -29,14 +28,9 @@
   <p align="center">
     The purpose of this repo is to have a backup of all my customisations in Garuda Linux.
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://github.com/AitorAstorga/garuda-linux-customisations/issues">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/AitorAstorga/garuda-linux-customisations/issues">Request Feature</a>
   </p>
 </div>
 
@@ -54,7 +48,14 @@
         <li><a href="#using-the-scripts">Using the Scripts</a></li>
       </ul>
     </li>
-    <li><a href="#installation-paths">Installation paths</a></li>
+    <li>
+      <a href="#manual-customisations">Manual Customisations</a>
+      <ul>
+        <li><a href="#installation-paths">Installation Paths</a></li>
+        <li><a href="#application-menu">Application Menu</a></li>
+        <li><a href="#mozilla-firefox-window-decorations">Mozilla Firefox Window Decorations</a></li>
+      </ul>
+    </li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
@@ -100,8 +101,10 @@ This project comes with two bash scripts `backup_customisations.sh` and `apply_c
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Manual Customisations
+This section is intended for those configurations that I want to change sometimes, but I never find :)
 
-## Installation paths
+### Installation paths
 This is the list of paths for each component:
 | Customisation                    | Path                               |
 |----------------------------------|------------------------------------|
@@ -123,9 +126,30 @@ This is the list of paths for each component:
 | Application Configuration        | ~/.config/                         |
 | Global Shortcuts                 | ~/.config/kglobalshortcutsrc       |
 
-Enable the menu app in the top bar of windows (options such as Files, Edit, View...):
+Note: keep in mind that icons and cursors share the same path!
 
-![imagen](https://github.com/AitorAstorga/garuda-linux-customisations/assets/44289776/9b053bbf-77a2-4b19-9734-09cfebaf6268)
+### Application Menu
+Enable the application menu in the top bar of windows (options such as Files, Edit, View...):
+
+1. Disable the application menu daemon and stop it if it is running:
+   
+   ![imagen](https://github.com/AitorAstorga/garuda-linux-customisations/assets/44289776/aecc267a-2fcf-4b80-8916-7012f79e6bd4)
+
+2. Remove the application menu from the title bar:
+
+   ![imagen](https://github.com/AitorAstorga/garuda-linux-customisations/assets/44289776/73524888-b4cd-46c6-979a-8c13cac0f75f)
+
+
+### Mozilla Firefox Window Decorations
+To merge the title bar with the Mozilla Firefox tabs do the following:
+1. Right click on the toolbar > `Customise toolbar`:
+
+   ![imagen](https://github.com/AitorAstorga/garuda-linux-customisations/assets/44289776/f4e88aa0-ddc2-41c9-bb36-02a0b0beb79a)
+
+2. Then, in the bottom left corner disable `Title bar`:
+
+   ![imagen](https://github.com/AitorAstorga/garuda-linux-customisations/assets/44289776/128491d4-5161-47d6-bad6-b512b40236b0)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
