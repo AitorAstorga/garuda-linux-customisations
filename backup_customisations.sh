@@ -25,6 +25,18 @@ PATHS["Plasmoid Widgets"]="/usr/share/plasma/plasmoids/"
 PATHS["Kvantum Themes"]="/usr/share/Kvantum/"
 PATHS["Application Configuration"]="$HOME/.config/"
 PATHS["Global Shortcuts"]="$HOME/.config/kglobalshortcutsrc"
+PATHS["User Plasma Themes"]="$HOME/.local/share/plasma/"
+PATHS["User Color Schemes"]="$HOME/.local/share/color-schemes/"
+PATHS["User Aurorae Themes"]="$HOME/.local/share/aurorae/"
+PATHS["User Konsole Themes"]="$HOME/.local/share/konsole/"
+PATHS["User Icon Themes"]="$HOME/.local/share/icons/"
+PATHS["User Wallpapers"]="$HOME/.local/share/wallpapers/"
+PATHS["SDDM Configuration"]="/etc/sddm.conf"
+PATHS["SDDM User Config"]="/var/lib/sddm/.config/"
+PATHS["Plasma Welcome Pages"]="/usr/share/plasma/plasma-welcome/extra-pages/"
+PATHS["Session Files X11"]="/usr/share/xsessions/"
+PATHS["Session Files Wayland"]="/usr/share/wayland-sessions/"
+PATHS["User Avatars"]="/var/lib/AccountsService/icons/"
 
 # Check if root (since we are reading from system directories)
 if [[ $EUID -ne 0 ]]; then
@@ -33,17 +45,25 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Make sure the Garuda Linux Customisations directory exists
-mkdir -p "$DIR/Garuda Linux Customisations"
+BACKUP_DIR="$DIR/Garuda Linux Customisations"
+mkdir -p "$BACKUP_DIR"
+
+# Create timestamp for this backup
+TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+echo "Creating backup with timestamp: $TIMESTAMP"
 
 # Iterate through each item and copy from system location to source directory
 for ITEM in "${!PATHS[@]}"; do
     if [[ -d "${PATHS[$ITEM]}" || -f "${PATHS[$ITEM]}" ]]; then
         echo "Extracting $ITEM..."
-        cp -r "${PATHS[$ITEM]}" "$DIR/Garuda Linux Customisations/$ITEM"
+        cp -r "${PATHS[$ITEM]}" "$BACKUP_DIR/$ITEM"
 
-        # After copying, check for the two paths and chown them back to the user
-        if [[ "$ITEM" == "Application Configuration" || "$ITEM" == "Global Shortcuts" ]]; then
-            chown -R $CURRENT_USER:$CURRENT_USER "$DIR/Garuda Linux Customisations/$ITEM"
+        # After copying, check for user paths and chown them back to the user
+        if [[ "$ITEM" == "Application Configuration" || "$ITEM" == "Global Shortcuts" || \
+              "$ITEM" == "User Plasma Themes" || "$ITEM" == "User Color Schemes" || \
+              "$ITEM" == "User Aurorae Themes" || "$ITEM" == "User Konsole Themes" || \
+              "$ITEM" == "User Icon Themes" || "$ITEM" == "User Wallpapers" ]]; then
+            chown -R $CURRENT_USER:$CURRENT_USER "$BACKUP_DIR/$ITEM"
         fi
     else
         echo "Path for $ITEM not found, skipping..."

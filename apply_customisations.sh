@@ -23,8 +23,20 @@ PATHS["Wallpapers"]="/usr/share/wallpapers/"
 PATHS["Aurorae Window Decorations"]="/usr/share/aurorae/themes/"
 PATHS["Plasmoid Widgets"]="/usr/share/plasma/plasmoids/"
 PATHS["Kvantum Themes"]="/usr/share/Kvantum/"
-PATHS["Application Configuration"]="~/.config/"
-PATHS["Global Shortcuts"]="~/.config/kglobalshortcutsrc"
+PATHS["Application Configuration"]="$HOME/.config/"
+PATHS["Global Shortcuts"]="$HOME/.config/kglobalshortcutsrc"
+PATHS["User Plasma Themes"]="$HOME/.local/share/plasma/"
+PATHS["User Color Schemes"]="$HOME/.local/share/color-schemes/"
+PATHS["User Aurorae Themes"]="$HOME/.local/share/aurorae/"
+PATHS["User Konsole Themes"]="$HOME/.local/share/konsole/"
+PATHS["User Icon Themes"]="$HOME/.local/share/icons/"
+PATHS["User Wallpapers"]="$HOME/.local/share/wallpapers/"
+PATHS["SDDM Configuration"]="/etc/sddm.conf"
+PATHS["SDDM User Config"]="/var/lib/sddm/.config/"
+PATHS["Plasma Welcome Pages"]="/usr/share/plasma/plasma-welcome/extra-pages/"
+PATHS["Session Files X11"]="/usr/share/xsessions/"
+PATHS["Session Files Wayland"]="/usr/share/wayland-sessions/"
+PATHS["User Avatars"]="/var/lib/AccountsService/icons/"
 
 # Check if root (since we are writing to system directories)
 if [[ $EUID -ne 0 ]]; then
@@ -38,8 +50,11 @@ for ITEM in "${!PATHS[@]}"; do
         echo "Copying $ITEM..."
         cp -r "$DIR/$ITEM" "${PATHS[$ITEM]}"
 
-        # After copying, check for the two paths and chown them back to the user
-        if [[ "$ITEM" == "Application Configuration" || "$ITEM" == "Global Shortcuts" ]]; then
+        # After copying, check for user paths and chown them back to the user
+        if [[ "$ITEM" == "Application Configuration" || "$ITEM" == "Global Shortcuts" || \
+              "$ITEM" == "User Plasma Themes" || "$ITEM" == "User Color Schemes" || \
+              "$ITEM" == "User Aurorae Themes" || "$ITEM" == "User Konsole Themes" || \
+              "$ITEM" == "User Icon Themes" || "$ITEM" == "User Wallpapers" ]]; then
             # Check if it's a directory or file and then chown
             if [[ -d "${PATHS[$ITEM]}" ]]; then
                 chown -R $CURRENT_USER: "${PATHS[$ITEM]}"

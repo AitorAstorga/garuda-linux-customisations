@@ -28,6 +28,8 @@
   <p align="center">
     The purpose of this repo is to have a backup of all my customisations in Garuda Linux.
     <br />
+    Supports modern KDE Plasma 6 features and follows <a href="https://wiki.archlinux.org/title/XDG_Base_Directory">XDG Base Directory specification</a>.
+    <br />
     <a href="https://github.com/AitorAstorga/garuda-linux-customisations/issues">Report Bug</a>
     ·
     <a href="https://github.com/AitorAstorga/garuda-linux-customisations/issues">Request Feature</a>
@@ -68,7 +70,8 @@ This project comes with two bash scripts `backup_customisations.sh` and `apply_c
 
 ### Prerequisites
 - Garuda Linux (or any Linux distribution with the listed KDE Plasma paths): Arch Linux, Kubuntu, openSUSE, Manjaro, Fedora, Neon, Debian...
-- Root permissions to execute the scripts.
+- KDE Plasma 6.0 or higher (for full compatibility with new features)
+- Root permissions to execute the scripts
 
 ### Setup
 1. **Clone the repository**:
@@ -105,28 +108,48 @@ This project comes with two bash scripts `backup_customisations.sh` and `apply_c
 This section is intended for those configurations that I want to change sometimes, but I never find :)
 
 ### Installation paths
-This is the list of paths for each component:
-| Customisation                    | Path                               |
-|----------------------------------|------------------------------------|
-| GRUB Themes                      | /usr/share/grub/themes/            |
-| SDDM Themes                      | /usr/share/sddm/themes/            |
-| SDDM Configuration               | /etc/sddm.conf                     |
-| Plasma Look & Feel Themes        | /usr/share/plasma/look-and-feel/   |
-| Plasma Desktop Themes            | /usr/share/plasma/desktoptheme/    |
-| Plasma Color Schemes             | /usr/share/color-schemes/          |
-| KWin Window Decorations          | /usr/share/kwin/decorations/       |
-| Plasma Layout Templates          | /usr/share/plasma/layout-templates/|
-| Icon Themes                      | /usr/share/icons/                  |
-| Konsole Themes                   | /usr/share/konsole/                |
-| Cursor Themes                    | /usr/share/icons/                  |
-| Wallpapers                       | /usr/share/wallpapers/             |
-| Aurorae Window Decorations       | /usr/share/aurorae/themes/         |
-| Plasmoid Widgets                 | /usr/share/plasma/plasmoids/       |
-| Kvantum Themes                   | /usr/share/Kvantum/                |
-| Application Configuration        | ~/.config/                         |
-| Global Shortcuts                 | ~/.config/kglobalshortcutsrc       |
+This is the list of paths for each component in KDE Plasma 6:
 
-Note: keep in mind that icons and cursors share the same path!
+#### System-wide Installation Paths
+| Customisation                    | Path                                      |
+|----------------------------------|-------------------------------------------|
+| GRUB Themes                      | /usr/share/grub/themes/                   |
+| SDDM Themes                      | /usr/share/sddm/themes/                   |
+| SDDM Configuration               | /etc/sddm.conf                            |
+| SDDM User Config                 | /var/lib/sddm/.config/                    |
+| Plasma Look & Feel Themes        | /usr/share/plasma/look-and-feel/          |
+| Plasma Desktop Themes            | /usr/share/plasma/desktoptheme/           |
+| Plasma Color Schemes             | /usr/share/color-schemes/                 |
+| KWin Window Decorations          | /usr/share/kwin/decorations/              |
+| Plasma Layout Templates          | /usr/share/plasma/layout-templates/       |
+| Icon Themes                      | /usr/share/icons/                         |
+| Konsole Themes                   | /usr/share/konsole/                       |
+| Cursor Themes                    | /usr/share/icons/                         |
+| Wallpapers                       | /usr/share/wallpapers/                    |
+| Aurorae Window Decorations       | /usr/share/aurorae/themes/                |
+| Plasmoid Widgets                 | /usr/share/plasma/plasmoids/              |
+| Kvantum Themes                   | /usr/share/Kvantum/                       |
+| Plasma Welcome Pages             | /usr/share/plasma/plasma-welcome/extra-pages/ |
+| Session Files (X11)              | /usr/share/xsessions/                     |
+| Session Files (Wayland)          | /usr/share/wayland-sessions/              |
+| User Avatars                     | /var/lib/AccountsService/icons/           |
+
+#### User-specific Installation Paths (KDE Plasma 6+)
+| Customisation                    | Path                                      |
+|----------------------------------|-------------------------------------------|
+| Application Configuration        | ~/.config/                                |
+| Global Shortcuts                 | ~/.config/kglobalshortcutsrc              |
+| User Plasma Themes               | ~/.local/share/plasma/                    |
+| User Color Schemes               | ~/.local/share/color-schemes/             |
+| User Aurorae Themes              | ~/.local/share/aurorae/                   |
+| User Konsole Themes              | ~/.local/share/konsole/                   |
+| User Icon Themes                 | ~/.local/share/icons/                     |
+| User Wallpapers                  | ~/.local/share/wallpapers/                |
+
+**Notes:**
+- Icons and cursors share the same path in both system and user directories
+- User-specific paths take precedence over system-wide paths
+- KDE Plasma 6 follows XDG Base Directory specification more strictly
 
 ### Application Menu
 Enable the application menu in the top bar of windows (options such as Files, Edit, View...):
@@ -150,6 +173,15 @@ To merge the title bar with the Mozilla Firefox tabs do the following:
 
    ![imagen](https://github.com/AitorAstorga/garuda-linux-customisations/assets/44289776/128491d4-5161-47d6-bad6-b512b40236b0)
 
+### KDE Plasma 6 Specific Features
+
+#### SDDM Settings Synchronization
+Apply your current Plasma settings to SDDM (login screen):
+1. Open System Settings > ... > Login Screen (SDDM)
+2. Click "Apply Plasma Settings..." (hamburguer menu) to sync your theme, colors, and scaling
+
+#### Welcome Center Customization
+Custom welcome pages can be added to `/usr/share/plasma/plasma-welcome/extra-pages/`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
